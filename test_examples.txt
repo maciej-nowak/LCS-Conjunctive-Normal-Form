@@ -1,23 +1,23 @@
 1 ?- test(1, X).
-kpn(~ (p and q)=>q=>r,_G1372)
+cnf(~ (p and q)=>q=>r,_G1372)
 X = (p or ~q or r)and q or ~q or r.
 
 2 ?- test(2, X).
-kpn((p=>q)and p=>q,_G1372)
+cnf((p=>q)and p=>q,_G1372)
 X = ((p or ~p)or q)and (~q or ~p)or q.
 
 3 ?- test(3, X).
-kpn((a and b)or (c and d)or e,_G1372)
+cnf((a and b)or (c and d)or e,_G1372)
 X = ((a or c or e)and a or d or e)and (b or c or e)and b or d or e.
 
 4 ?- test(4, X).
-kpn(~ ((~p=> ~q)and~r),_G1372)
+cnf(~ ((~p=> ~q)and~r),_G1372)
 X = (~p or r)and q or r.
 
 5 ?- test(5, X).
-kpn(((p and q)or r and s)or t,_G1372)
+cnf(((p and q)or r and s)or t,_G1372)
 X = (((p or r)or t)and (q or r)or t)and ((p or s)or t)and (q or s)or t.
 
 6 ?- test(6, X).
-kpn(p<=>r and s,_G1372)
+cnf(p<=>r and s,_G1372)
 X = ((~p or r)and~p or s)and p or ~r or ~s.
